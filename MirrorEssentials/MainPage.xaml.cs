@@ -22,9 +22,30 @@ namespace MirrorEssentials
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        DispatcherTimer timer;
         public MainPage()
         {
             this.InitializeComponent();
+
+            TimeDate();
+
+       
+        }
+
+        private void TimeDate()
+        {
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Start();
+
+            timer.Tick += Timer_Tick;
+
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            timeTextBlock.Text = DateTime.Now.ToString("h:mm tt");
+            dateTextBlock.Text = DateTime.Now.ToString("dddd, MMMM d");
         }
     }
 }

@@ -11,9 +11,7 @@
         <StackPanel HorizontalAlignment="Left" Height="561" Margin="40,40,0,0" VerticalAlignment="Top" Width="590">
             <TextBlock x:Name="timeTextBlock" TextWrapping="Wrap" Text="9:15 AM" FontSize="128" Foreground="White" FontWeight="Thin"/>
             <TextBlock x:Name="dateTextBlock" TextWrapping="Wrap" Text="Sunday, April 23rd" FontSize="54" Foreground="White" FontWeight="Thin"/>
-            <TextBlock x:Name="weatherTextBlock" TextWrapping="Wrap" FontSize="28" Foreground="White" FontWeight="Thin" Margin="0,0,-0.6,0">
-            	<Run Text="It's quite chilly tonight, at 5C with partial clouds"/>
-            </TextBlock>
+            <TextBlock x:Name="weatherTextBlock" TextWrapping="Wrap" Text="{Binding Path=WeatherStatus}" FontSize="28" Foreground="White" FontWeight="Thin" Margin="0,0,-0.6,0"/>
         </StackPanel>
 
     </Grid>
